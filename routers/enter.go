@@ -12,7 +12,7 @@ import (
 
 //
 //type RouterGroup struct {
-//	*gin.Engine
+//	*gin.RouterGroup
 //}
 
 type ApiRouter struct {
