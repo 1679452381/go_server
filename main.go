@@ -6,7 +6,6 @@
 package main
 
 import (
-	"fmt"
 	"go_server/core"
 	"go_server/core/zlog"
 	"go_server/global"
@@ -23,6 +22,5 @@ func main() {
 	//	路由初始化
 	router := routers.InitRouter()
 	addr := global.Config.System.Addr()
-	fmt.Println(addr)
 	router.Run(addr)
 }

@@ -14,6 +14,5 @@ type System struct {
 }
 
 func (s *System) Addr() string {
-	fmt.Println(s.Port)
 	return fmt.Sprintf("%s:%d", s.Host, s.Port)
 }

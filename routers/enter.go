@@ -8,8 +8,17 @@ package routers
 import (
 	"github.com/gin-gonic/gin"
 	"go_server/global"
-	"net/http"
 )
+
+//
+//type RouterGroup struct {
+//	*gin.Engine
+//}
+
+type ApiRouter struct {
+}
+
+var RouterGroupApp = new(ApiRouter)
 
 func InitRouter() *gin.Engine {
 	//Gin 框架提供了三种运行模式，分别是 "debug"、"release" 和 "test"
@@ -19,10 +28,15 @@ func InitRouter() *gin.Engine {
 	gin.SetMode(global.Config.System.Env)
 
 	router := gin.Default()
+	apiRouterGroup := router.Group("api")
+	//settingsApi := api.ApiGroupApp.SettingsApi
+	//
+	//router.GET("/", settingsApi.SettingsInfoView)
 
-	router.GET("/", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{"msg": "hello"})
-	})
+	//routerGroup := RouterGroup{router}
+	//routerGroup.SettingRouter()
+
+	RouterGroupApp.SettingRouter(apiRouterGroup)
 
 	return router
 }
