@@ -7,22 +7,17 @@ package core
 
 import (
 	"fmt"
+	"go_server/config"
+	"go_server/global"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"log"
 )
 
-type Server struct {
-	Mysql struct {
-		Host string `yaml:"host"`
-		Port string `yaml:"port"`
-	} `yaml:"mysql"`
-}
-
 // 读取yaml文件配置
 func InitConf() {
 	const ConfigFile = "settings.yaml"
-	c := &Server{}
+	c := &config.Config{}
 	yamlConf, err := ioutil.ReadFile(ConfigFile)
 	if err != nil {
 		panic(fmt.Errorf("get yaml config err:%s", err))
@@ -32,5 +27,6 @@ func InitConf() {
 		log.Fatalf("config Init Unmarshal:%v ", err)
 	}
 	log.Println("config yaml file log init success")
-	fmt.Println(c)
+	//定义全局变量存放配置数据
+	global.Config = c
 }

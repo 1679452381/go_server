@@ -5,6 +5,8 @@
  **/
 package main
 
-func main() {
+import "go_server/core"
 
+func main() {
+	core.InitConf()
 }
