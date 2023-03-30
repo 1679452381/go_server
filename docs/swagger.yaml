@@ -1,0 +1,9 @@
+basePath: /a
+host: 127.0.0.1:8080
+info:
+  contact: {}
+  description: API文档
+  title: gvb_gin_server
+  version: "1.0"
+paths: {}
+swagger: "2.0"
