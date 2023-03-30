@@ -6,9 +6,11 @@
 package main
 
 import (
+	"fmt"
 	"go_server/core"
-	logger "go_server/core/zlog"
+	"go_server/core/zlog"
 	"go_server/global"
+	"go_server/routers"
 )
 
 func main() {
@@ -17,6 +19,10 @@ func main() {
 	//连接数据库
 	global.DB = core.InitGrom()
 	//	日志文件初始化
-	logger.Init()
-
+	zlog.Init()
+	//	路由初始化
+	router := routers.InitRouter()
+	addr := global.Config.System.Addr()
+	fmt.Println(addr)
+	router.Run(addr)
 }
