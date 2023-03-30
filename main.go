@@ -5,8 +5,14 @@
  **/
 package main
 
-import "go_server/core"
+import (
+	"go_server/core"
+	"go_server/global"
+)
 
 func main() {
+	//配置文件初始化
 	core.InitConf()
+	//连接数据库
+	global.DB = core.InitGrom()
 }
