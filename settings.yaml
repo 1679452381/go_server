@@ -6,9 +6,9 @@ mysql:
   password: zxczxc
   log-level: dev
 logger:
-  level: info
+  level: debug
   prefix: "[GIN_SERVER]"
-  director: log
+  director: /logs/log
   show-line: true
   log-in-console : true
 system:

@@ -7,6 +7,7 @@ package main
 
 import (
 	"go_server/core"
+	logger "go_server/core/zlog"
 	"go_server/global"
 )
 
@@ -15,4 +16,7 @@ func main() {
 	core.InitConf()
 	//连接数据库
 	global.DB = core.InitGrom()
+	//	日志文件初始化
+	logger.Init()
+
 }
