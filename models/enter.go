@@ -8,7 +8,7 @@ package models
 import "time"
 
 type Model struct {
-	ID       uint      `gorm:"primaryKey" json:"id" :"id"`
-	CreateAt time.Time `json:"create_at" :"create-at"`
-	UpdateAt time.Time `json:"-" :"update-at"`
+	ID       uint      `gorm:"primaryKey" json:"id"`
+	CreateAt time.Time `json:"create_at"`
+	UpdateAt time.Time `json:"-"`
 }

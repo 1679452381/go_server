@@ -8,6 +8,7 @@ package main
 import (
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
+	"go_server/cmd"
 	"go_server/core"
 	"go_server/core/zlog"
 	_ "go_server/docs"
@@ -25,11 +26,21 @@ func main() {
 	core.InitConf()
 	//连接数据库
 	global.DB = core.InitGrom()
+
+	//命令行参数绑定
+	option := cmd.Parse()
+	if cmd.IsWebSrop(option) {
+		cmd.SwitchOption(option)
+		return
+	}
 	//	日志文件初始化
 	zlog.Init()
 	//	路由初始化
 	router := routers.InitRouter()
 	// swagger 初始化
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
-	router.Run(global.Config.System.Addr())
+	err := router.Run(global.Config.System.Addr())
+	if err != nil {
+		zlog.Error(err.Error())
+	}
 }

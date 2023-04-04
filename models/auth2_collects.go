@@ -13,5 +13,5 @@ type Auth2Collects struct {
 	AuthModel    AuthModel    `gorm:"foreignKey:AuthID" json:"auth_model"`
 	ArticleID    uint         `gorm:"primaryKey" json:"article_id"`
 	ArticleModel ArticleModel `gorm:"foreignKey:ArticleID" json:"article_model"`
-	CreateAt     time.Time    ` json:"create_at"`
+	CreateAt     time.Time    `json:"create_at"`
 }

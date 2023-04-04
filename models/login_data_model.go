@@ -1,0 +1,17 @@
+/**
+ * @author X
+ * @date 2023/4/3
+ * @description
+ **/
+package models
+
+type LoginDataModel struct {
+	Model
+	AuthID    uint      `json:"auth_id"`
+	AuthModel AuthModel `gorm:"foreignKey:AuthID" json:"-"`
+	IP        string    `gorm:"size:20" json:"ip"`
+	NickName  string    `gorm:"size:42" json:"nick_name"`
+	Token     string    `gorm:"size:256" json:"token"`
+	Device    string    `gorm:"size:256" json:"device"` //登录设备
+	Addr      string    `gorm:"size:64" json:"addr"`
+}

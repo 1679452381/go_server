@@ -5,6 +5,9 @@
  **/
 package models
 
-func main() {
-
+type ModeModel struct {
+	Model
+	Content   string `gorm:"size:128" json:"content"'`
+	AuthID    uint
+	AuthModel AuthModel `gorm:"foreignKey:AuthID" json:"-"`
 }
