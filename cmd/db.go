@@ -18,7 +18,7 @@ func Makemigrations() {
 
 	var err error
 	//设置联表
-	err = global.DB.SetupJoinTable(&models.AuthModel{}, "CollectsModels", &models.Auth2Collects{})
+	err = global.DB.Debug().SetupJoinTable(&models.AuthModel{}, "CollectsModels", &models.Auth2CollectsModel{})
 	if err != nil {
 		fmt.Println(err.Error())
 	}
@@ -28,7 +28,7 @@ func Makemigrations() {
 	}
 	//获取当前数据库
 	//global.DB.Migrator().CurrentDatabase()
-	// 生成表结构
+	//生成表结构
 	err = global.DB.Set("gorm:table_options", "ENGINE=InnoDB").
 		AutoMigrate(
 			&models.AuthModel{},

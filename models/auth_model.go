@@ -21,6 +21,6 @@ type AuthModel struct {
 	Role           ctype.Role       `gorm:"size:4;default:1" json:"role"`       // 权限1 管理员 2 普通用户 3 游客
 	SignStatus     ctype.SignStatus `gorm:"type=smallint(6)" json:"signStatus"` //注册来源
 	ArticleModels  []ArticleModel   `gorm:"foreignKey:AuthID" json:"-"`
-	CollectsModels []ArticleModel   `gorm:"many2many:auth2_collects;JoinForeignKey:AuthID;JoinReference:ArticleID" json:"-"`
+	CollectsModels []ArticleModel   `gorm:"many2many:auth2_collects_models" json:"-"`
 	Mode           []ModeModel      `gorm:"foreignKey:AuthID" json:"-"` //心情
 }
