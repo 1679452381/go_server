@@ -29,7 +29,7 @@ func getFileLogWriter() (syncer zapcore.WriteSyncer) {
 	}
 	return zapcore.AddSync(lumberJackLogger)
 }
-func Init() {
+func Init() *zap.Logger {
 	encoderConfig := zap.NewProductionEncoderConfig()
 	//设置日志记录中时间的格式 "2006-01-02T15:04:05.000Z0700"
 	encoderConfig.EncodeTime = zapcore.ISO8601TimeEncoder
@@ -49,6 +49,7 @@ func Init() {
 		zapcore.NewCore(encoder, fileWriteSyncer, level),
 	)
 	logger = zap.New(core)
+	return logger
 }
 
 func Info(message string, fields ...zap.Field) {

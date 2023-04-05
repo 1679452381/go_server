@@ -7,7 +7,6 @@ package cmd
 
 import (
 	"fmt"
-	"go_server/core/zlog"
 	"go_server/global"
 	"go_server/models"
 )
@@ -44,9 +43,9 @@ func Makemigrations() {
 			&models.LoginDataModel{},
 		)
 	if err != nil {
-		zlog.Error("[error ] 创建数据表失败")
+		global.Zlogger.Error("[error ] 创建数据表失败")
 		return
 	}
-	//zlog.Info("[ Info ] 创建数据表完成")
+	global.Zlogger.Info("[ Info ] 创建数据表完成")
 	fmt.Println("创建数据表完成")
 }

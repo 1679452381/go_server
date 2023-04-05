@@ -27,20 +27,22 @@ func main() {
 	//连接数据库
 	global.DB = core.InitGrom()
 
+	//	日志文件初始化
+	global.Zlogger = zlog.Init()
+
 	//命令行参数绑定
 	option := cmd.Parse()
 	if cmd.IsWebSrop(option) {
 		cmd.SwitchOption(option)
 		return
 	}
-	//	日志文件初始化
-	zlog.Init()
-	//	路由初始化
+
+	//路由初始化
 	router := routers.InitRouter()
 	// swagger 初始化
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	err := router.Run(global.Config.System.Addr())
 	if err != nil {
-		zlog.Error(err.Error())
+		global.Zlogger.Error(err.Error())
 	}
 }
