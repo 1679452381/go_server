@@ -14,7 +14,7 @@ type Mysql struct {
 	Db       string `yaml:"db"`
 	User     string `yaml:"user"`
 	Password string `yaml:"password"`
-	LogLevel string `yaml:"log-level"`
+	LogLevel string `yaml:"log_level"`
 }
 
 func (m Mysql) Dsn() string {

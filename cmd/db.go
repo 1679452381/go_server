@@ -43,9 +43,9 @@ func Makemigrations() {
 			&models.LoginDataModel{},
 		)
 	if err != nil {
-		global.Zlogger.Error("[error ] 创建数据表失败")
+		global.Log.Error("[error ] 创建数据表失败")
 		return
 	}
-	global.Zlogger.Info("[ Info ] 创建数据表完成")
+	global.Log.Info("[ Info ] 创建数据表完成")
 	fmt.Println("创建数据表完成")
 }

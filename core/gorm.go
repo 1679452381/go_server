@@ -33,7 +33,7 @@ func InitGrom() *gorm.DB {
 
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{Logger: mysqlLogger})
 	if err != nil {
-		zlog.Error(fmt.Sprintf("[%s]连接失败", db))
+		global.Log.Error(fmt.Sprintf("[%s]连接失败", db))
 	}
 	sqlDB, _ := db.DB()
 	sqlDB.SetMaxIdleConns(10)               //最大空闲连接数

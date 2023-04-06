@@ -12,16 +12,16 @@ import (
 
 type Resonse struct {
 	Code int
-	Data map[string]interface{}
+	Data interface{}
 	Msg  string
 }
 
 const (
-	Success = 0
+	Success = 200
 	Error   = 1
 )
 
-func Result(code int, data map[string]interface{}, msg string, c *gin.Context) {
+func Result(code int, data interface{}, msg string, c *gin.Context) {
 	c.JSON(http.StatusOK, Resonse{
 		code,
 		data,
@@ -29,13 +29,13 @@ func Result(code int, data map[string]interface{}, msg string, c *gin.Context) {
 	})
 }
 
-func Ok(data map[string]interface{}, msg string, c *gin.Context) {
+func Ok(data interface{}, msg string, c *gin.Context) {
 	Result(Success, data, msg, c)
 }
 func OkWithMsg(msg string, c *gin.Context) {
 	Result(Success, map[string]interface{}{}, msg, c)
 }
-func OkWithData(data map[string]interface{}, c *gin.Context) {
+func OkWithData(data interface{}, c *gin.Context) {
 	Result(Success, data, "成功", c)
 }
 

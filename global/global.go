@@ -12,7 +12,7 @@ import (
 )
 
 var (
-	Config  *config.Config
-	DB      *gorm.DB
-	Zlogger *zap.Logger
+	Config *config.Config
+	DB     *gorm.DB
+	Log    *zap.Logger
 )

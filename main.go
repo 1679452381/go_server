@@ -28,7 +28,7 @@ func main() {
 	global.DB = core.InitGrom()
 
 	//	日志文件初始化
-	global.Zlogger = zlog.Init()
+	global.Log = zlog.Init()
 
 	//命令行参数绑定
 	option := cmd.Parse()
@@ -43,6 +43,6 @@ func main() {
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	err := router.Run(global.Config.System.Addr())
 	if err != nil {
-		global.Zlogger.Error(err.Error())
+		global.Log.Error(err.Error())
 	}
 }

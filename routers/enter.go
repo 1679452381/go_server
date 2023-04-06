@@ -36,7 +36,7 @@ func InitRouter() *gin.Engine {
 	//routerGroup := RouterGroup{router}
 	//routerGroup.SettingRouter()
 
-	RouterGroupApp.SettingRouter(apiRouterGroup)
+	RouterGroupApp.SiteInfoRouter(apiRouterGroup)
 
 	return router
 }

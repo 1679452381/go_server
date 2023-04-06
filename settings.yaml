@@ -1,17 +1,32 @@
 mysql:
   host: 127.0.0.1
   port: 3306
+  config: ""
   db: gvb_db
-  user : root
+  user: root
   password: zxczxc
-  log-level: dev
+  log_level: dev
 logger:
   level: debug
-  prefix: "[GIN_SERVER]"
+  prefix: '[GIN_SERVER]'
   director: log
-  show-line: true
-  log-in-console : true
+  show_line: true
+  log_in_console: true
 system:
-  host: "127.0.0.1"
+  host: 127.0.0.1
   port: 8080
   env: debug
+site_info:
+  created_at: "2023-01-01"
+  bei_an: 备案
+  qq_image: http://www.baidu.com
+  wechat_image: http://www.baidu.com
+  version: "1.0"
+  email: 15660589213@163.com
+  name: 阿猫
+  job: 后端开发
+  addr: 河南郑州
+  slogan: 博客
+  sloganEn: ""
+  web: www.baidu.com
+  github_url: www.baidu.com

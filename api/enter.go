@@ -5,10 +5,12 @@
  **/
 package api
 
-import "go_server/api/settings_api"
+import (
+	"go_server/api/settings_info_api"
+)
 
 type AppiGroup struct {
-	SettingsApi settings_api.SettingsApi
+	SiteInfoApi settings_info_api.SiteInfoApi
 }
 
 var ApiGroupApp = new(AppiGroup)
