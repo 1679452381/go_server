@@ -11,4 +11,5 @@ type Config struct {
 	System   System   `yaml:"system"`
 	SiteInfo SiteInfo `yaml:"site_info"`
 	QiNiu    QiNiu    `yaml:"qi_niu"`
+	Local    Local    `yaml:"local"`
 }

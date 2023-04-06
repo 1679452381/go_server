@@ -38,3 +38,6 @@ qi_niu:
   cdn: ""
   zone: ""
   size: ""
+local:
+  path: uploads/file
+  file_size: 5

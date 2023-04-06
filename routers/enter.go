@@ -29,14 +29,12 @@ func InitRouter() *gin.Engine {
 
 	router := gin.Default()
 	apiRouterGroup := router.Group("api")
-	//settingsApi := api.ApiGroupApp.SettingsApi
-	//
-	//router.GET("/", settingsApi.SettingsInfoView)
 
-	//routerGroup := RouterGroup{router}
-	//routerGroup.SettingRouter()
+	//routerGroupApp := RouterGroup{router}
+	//routerGroupApp.SettingRouter()
 
 	RouterGroupApp.SiteInfoRouter(apiRouterGroup)
+	RouterGroupApp.ImagesRouter(apiRouterGroup)
 
 	return router
 }
