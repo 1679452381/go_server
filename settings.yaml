@@ -23,10 +23,18 @@ site_info:
   wechat_image: http://www.baidu.com
   version: "1.0"
   email: 15660589213@163.com
-  name: 阿猫
+  name: 玉玉
   job: 后端开发
   addr: 河南郑州
   slogan: 博客
   sloganEn: ""
   web: www.baidu.com
   github_url: www.baidu.com
+qi_niu:
+  enable: ""
+  accessKey: "2222"
+  secretKey: ""
+  bucket: ""
+  cdn: ""
+  zone: ""
+  size: ""

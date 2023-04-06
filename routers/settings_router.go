@@ -13,7 +13,7 @@ import (
 func (ApiRouter) SiteInfoRouter(router *gin.RouterGroup) {
 	siteInfoApi := api.ApiGroupApp.SiteInfoApi
 	{
-		router.GET("/settings", siteInfoApi.SiteInfoView)
-		router.PUT("/settings", siteInfoApi.SettingsUpdateView)
+		router.GET("/settings/:name", siteInfoApi.SiteInfoView)
+		router.PUT("/settings/:name", siteInfoApi.SettingsUpdateView)
 	}
 }
